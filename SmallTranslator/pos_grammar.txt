@@ -1,0 +1,48 @@
+program : statements ;
+
+statements : statement statements_prime ;
+statements_prime : statement statements_prime | sub ;
+
+sub : ‘SUB’ ID subbody ‘ENDSUB’ ;
+subbody : [statement]*;
+
+statement : if_statement | while_loop | for_loop | buildit | goto | identifiersentences ;
+
+identifiersentences : identifier characteristic ;
+identifier : ID array? ;
+array : TKN_LEFT_BRAC expression TKN_RIGHT_BRAC array? ;
+
+characteristic : TKN_COLON | TKN_LEFT_PAREN TKN_RIGHT_PAREN | TKN_EQUALS expression ;
+
+literal : TKN_NUMBER | TKN_TEXT | identifier | TRUE | FALSE | buildit | TKN_LEFT_PAREN expression TKN_RIGHT_PAREN ;
+
+if_statement : IF TKN_LEFT_PAREN expression TKN_RIGHT_PAREN THEN statements elseif else ENDIF ;
+elseif : ELSEIF TKN_LEFT_PAREN expression TKN_RIGHT_PAREN THEN statements elseif | ;
+else : ELSE statements | ;
+
+for_loop : FOR identifiersentences TO expression step statements ENDFOR ;
+step : STEP e? | ;
+
+goto : GOTO ID ;
+
+buildit : buildit_words TKN_PERIOD identifier TKN_LEFT_PAREN arguments? TKN_RIGHT_PAREN ;
+buildit_words : PROGRAM | STACK | ARRAY | TEXTWINDOW ;
+arguments : argument_body a_prima? ;
+argument_body : expression? ;
+
+expression : expressionbool expression_prima? | TKN_MINUS expression ;
+expression_prima : OR expressionbool | ;
+expressionbool : expressionrel bool_prima? ;
+bool_prima : AND expressionrel bool_prima? | ;
+expressionrel : e relprima ;
+relprima : oprel e | ;
+e : t e_prima? ;
+e_prima : opsuma t e_prima? | ;
+t : literal t_prima? ;
+t_prima : opmult literal t_prima? | ;
+
+oprel : TKN_GREATER | TKN_LESS | TKN_LEQ | TKN_GEQ | TKN_EQUALS | TKN_DIFF ;
+opsuma : TKN_PLUS | TKN_MINUS ;
+opmult : TKN_TIMES | TKN_DIV ;
+
+WS : [ \t\r\n]+ -> skip ;
