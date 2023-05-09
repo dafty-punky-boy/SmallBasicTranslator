@@ -2,10 +2,10 @@
 Juliana Cardozo 
 Carlos Rios
 Sebastian Peñafiel
-##Variables:
-##Loops
-##If statements
-##Expresions
-##Functions
-##Arrays
-##Dictionary
+## Variables:
+## Loops
+## If statements
+## Expresions
+## Functions
+## Arrays
+## Dictionary
