@@ -10,26 +10,26 @@ statement : if_statement | while_loop | for_loop | buildit | goto | identifierse
 
 identifiersentences : identifier characteristic ;
 identifier : ID (array)? ;
-array : (TKN_LEFT_BRAC expression TKN_RIGHT_BRAC)+ ;
+array : ('[' expression ']')+ ;
 
-characteristic : TKN_COLON | TKN_LEFT_PAREN TKN_RIGHT_PAREN | TKN_EQUALS expression ;
+characteristic : ':' | '(' ')' | '=' expression ;
 
-literal : TKN_NUMBER | TKN_TEXT | identifier | TRUE | FALSE | buildit | TKN_LEFT_PAREN expression TKN_RIGHT_PAREN ;
+literal : TKN_NUMBER | TKN_TEXT | identifier | TRUE | FALSE | buildit | '(' expression ')' ;
 
-if_statement : 'If' TKN_LEFT_PAREN expression TKN_RIGHT_PAREN 'Then' statement*
-                ('ElseIf' TKN_LEFT_PAREN expression TKN_RIGHT_PAREN 'Then' statement*)* ('Else' statement*)? 'EndIf' ;
+if_statement : 'If' '(' expression ')' 'Then' statement*
+                ('ElseIf' '(' expression ')' 'Then' statement*)* ('Else' statement*)? 'EndIf' ;
 
 for_loop : 'For' identifiersentences 'To' expression ('Step'  e)? statement* 'EndFor' ;
 
-while_loop : 'While' TKN_LEFT_PAREN expression TKN_RIGHT_PAREN statement* 'EndWhile' ;
+while_loop : 'While' '(' expression ')' statement* 'EndWhile' ;
 
 
 goto : 'Goto' ID ;
 
-buildit : buildit_words TKN_PERIOD identifier TKN_LEFT_PAREN (expression)? (TKN_COMMA (expression)?)* TKN_RIGHT_PAREN ;
+buildit : buildit_words '.' identifier '(' (expression)? (',' (expression)?)* ')' ;
 buildit_words : 'Program' | 'Stack' | 'Array' | 'TextWindow';
 
-expression : expressionbool expression_prima? | TKN_MINUS expression ;
+expression : expressionbool expression_prima? | '-' expression ;
 expression_prima : 'Or' expressionbool ;
 expressionbool : expressionrel bool_prima? ;
 bool_prima : 'And' expressionrel bool_prima? ;
@@ -40,9 +40,9 @@ e_prima : opsuma t e_prima? ;
 t : literal t_prima? ;
 t_prima : opmult literal t_prima? ;
 
-oprel : TKN_GREATER | TKN_LESS | TKN_LEQ | TKN_GEQ | TKN_EQUALS | TKN_DIFF ;
-opsuma : TKN_PLUS | TKN_MINUS ;
-opmult : TKN_TIMES | TKN_DIV ;
+oprel : '>' | '<' | '<=' | '>=' | '=' | '<>' ;
+opsuma : '+' | '-' ;
+opmult : '*' | '/' ;
 
 // REGLAS LEXICAS Y TOKENS
 ID : [a-zA-Z\u00C0-\u017F][a-zA-Z0-9_\u00C0-\u017F]* ;
@@ -50,7 +50,8 @@ TRUE : '"True"' ; // Si a alguien se le ocurre el regex para minus y mayus, que 
 FALSE : '"False"' ;
 TKN_TEXT : '"'([^"]*)'"' ;
 TKN_NUMBER : [0-9]+('.'[0-9]*)? ;
-TKN_PERIOD : '.' ;
+
+/*TKN_PERIOD : '.' ;
 TKN_GEQ : '>=' ;
 TKN_LEQ : '<=' ;
 TKN_EQUALS : '=' ;
@@ -67,7 +68,7 @@ TKN_DIV : '/' ;
 TKN_DIFF : '<>' ;
 TKN_LESS : '<' ;
 TKN_GREATER : '>' ;
-COMILL : '"';
+COMILL : '"';*/
 
 WS : [ \t\r\n]+ -> skip ;
 
