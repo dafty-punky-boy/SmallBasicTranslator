@@ -160,18 +160,6 @@ public class SmallBasicGrammarBaseListener implements SmallBasicGrammarListener 
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStep(SmallBasicGrammarParser.StepContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitStep(SmallBasicGrammarParser.StepContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterGoto(SmallBasicGrammarParser.GotoContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -208,18 +196,6 @@ public class SmallBasicGrammarBaseListener implements SmallBasicGrammarListener 
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterArgument_body(SmallBasicGrammarParser.Argument_bodyContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitArgument_body(SmallBasicGrammarParser.Argument_bodyContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterExpression(SmallBasicGrammarParser.ExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -227,18 +203,6 @@ public class SmallBasicGrammarBaseListener implements SmallBasicGrammarListener 
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExpression(SmallBasicGrammarParser.ExpressionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterExpression_prima(SmallBasicGrammarParser.Expression_primaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExpression_prima(SmallBasicGrammarParser.Expression_primaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -256,18 +220,6 @@ public class SmallBasicGrammarBaseListener implements SmallBasicGrammarListener 
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBool_prima(SmallBasicGrammarParser.Bool_primaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitBool_prima(SmallBasicGrammarParser.Bool_primaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterExpressionrel(SmallBasicGrammarParser.ExpressionrelContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -275,18 +227,6 @@ public class SmallBasicGrammarBaseListener implements SmallBasicGrammarListener 
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExpressionrel(SmallBasicGrammarParser.ExpressionrelContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterRelprima(SmallBasicGrammarParser.RelprimaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitRelprima(SmallBasicGrammarParser.RelprimaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -304,18 +244,6 @@ public class SmallBasicGrammarBaseListener implements SmallBasicGrammarListener 
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterE_prima(SmallBasicGrammarParser.E_primaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitE_prima(SmallBasicGrammarParser.E_primaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterT(SmallBasicGrammarParser.TContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -323,18 +251,6 @@ public class SmallBasicGrammarBaseListener implements SmallBasicGrammarListener 
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitT(SmallBasicGrammarParser.TContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterT_prima(SmallBasicGrammarParser.T_primaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitT_prima(SmallBasicGrammarParser.T_primaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

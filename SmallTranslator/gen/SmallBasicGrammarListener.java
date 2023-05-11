@@ -127,16 +127,6 @@ public interface SmallBasicGrammarListener extends ParseTreeListener {
 	 */
 	void exitWhile_loop(SmallBasicGrammarParser.While_loopContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#step}.
-	 * @param ctx the parse tree
-	 */
-	void enterStep(SmallBasicGrammarParser.StepContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#step}.
-	 * @param ctx the parse tree
-	 */
-	void exitStep(SmallBasicGrammarParser.StepContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#goto}.
 	 * @param ctx the parse tree
 	 */
@@ -167,16 +157,6 @@ public interface SmallBasicGrammarListener extends ParseTreeListener {
 	 */
 	void exitBuildit_words(SmallBasicGrammarParser.Buildit_wordsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#argument_body}.
-	 * @param ctx the parse tree
-	 */
-	void enterArgument_body(SmallBasicGrammarParser.Argument_bodyContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#argument_body}.
-	 * @param ctx the parse tree
-	 */
-	void exitArgument_body(SmallBasicGrammarParser.Argument_bodyContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#expression}.
 	 * @param ctx the parse tree
 	 */
@@ -186,16 +166,6 @@ public interface SmallBasicGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExpression(SmallBasicGrammarParser.ExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#expression_prima}.
-	 * @param ctx the parse tree
-	 */
-	void enterExpression_prima(SmallBasicGrammarParser.Expression_primaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#expression_prima}.
-	 * @param ctx the parse tree
-	 */
-	void exitExpression_prima(SmallBasicGrammarParser.Expression_primaContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#expressionbool}.
 	 * @param ctx the parse tree
@@ -207,16 +177,6 @@ public interface SmallBasicGrammarListener extends ParseTreeListener {
 	 */
 	void exitExpressionbool(SmallBasicGrammarParser.ExpressionboolContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#bool_prima}.
-	 * @param ctx the parse tree
-	 */
-	void enterBool_prima(SmallBasicGrammarParser.Bool_primaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#bool_prima}.
-	 * @param ctx the parse tree
-	 */
-	void exitBool_prima(SmallBasicGrammarParser.Bool_primaContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#expressionrel}.
 	 * @param ctx the parse tree
 	 */
@@ -226,16 +186,6 @@ public interface SmallBasicGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExpressionrel(SmallBasicGrammarParser.ExpressionrelContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#relprima}.
-	 * @param ctx the parse tree
-	 */
-	void enterRelprima(SmallBasicGrammarParser.RelprimaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#relprima}.
-	 * @param ctx the parse tree
-	 */
-	void exitRelprima(SmallBasicGrammarParser.RelprimaContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#e}.
 	 * @param ctx the parse tree
@@ -247,16 +197,6 @@ public interface SmallBasicGrammarListener extends ParseTreeListener {
 	 */
 	void exitE(SmallBasicGrammarParser.EContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#e_prima}.
-	 * @param ctx the parse tree
-	 */
-	void enterE_prima(SmallBasicGrammarParser.E_primaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#e_prima}.
-	 * @param ctx the parse tree
-	 */
-	void exitE_prima(SmallBasicGrammarParser.E_primaContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#t}.
 	 * @param ctx the parse tree
 	 */
@@ -266,16 +206,6 @@ public interface SmallBasicGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitT(SmallBasicGrammarParser.TContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#t_prima}.
-	 * @param ctx the parse tree
-	 */
-	void enterT_prima(SmallBasicGrammarParser.T_primaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#t_prima}.
-	 * @param ctx the parse tree
-	 */
-	void exitT_prima(SmallBasicGrammarParser.T_primaContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#oprel}.
 	 * @param ctx the parse tree

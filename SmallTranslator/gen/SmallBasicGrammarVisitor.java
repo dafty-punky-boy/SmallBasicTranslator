@@ -82,12 +82,6 @@ public interface SmallBasicGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitWhile_loop(SmallBasicGrammarParser.While_loopContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#step}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitStep(SmallBasicGrammarParser.StepContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#goto}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -106,23 +100,11 @@ public interface SmallBasicGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitBuildit_words(SmallBasicGrammarParser.Buildit_wordsContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#argument_body}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitArgument_body(SmallBasicGrammarParser.Argument_bodyContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitExpression(SmallBasicGrammarParser.ExpressionContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#expression_prima}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitExpression_prima(SmallBasicGrammarParser.Expression_primaContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#expressionbool}.
 	 * @param ctx the parse tree
@@ -130,23 +112,11 @@ public interface SmallBasicGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExpressionbool(SmallBasicGrammarParser.ExpressionboolContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#bool_prima}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBool_prima(SmallBasicGrammarParser.Bool_primaContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#expressionrel}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitExpressionrel(SmallBasicGrammarParser.ExpressionrelContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#relprima}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitRelprima(SmallBasicGrammarParser.RelprimaContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#e}.
 	 * @param ctx the parse tree
@@ -154,23 +124,11 @@ public interface SmallBasicGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitE(SmallBasicGrammarParser.EContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#e_prima}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitE_prima(SmallBasicGrammarParser.E_primaContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#t}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitT(SmallBasicGrammarParser.TContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#t_prima}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitT_prima(SmallBasicGrammarParser.T_primaContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#oprel}.
 	 * @param ctx the parse tree
