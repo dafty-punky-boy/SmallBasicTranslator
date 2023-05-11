@@ -24,21 +24,34 @@ while_loop : 'While' '(' expression ')' statement* 'EndWhile' ;
 
 goto : 'Goto' ID ;
 
-buildit : buildit_words '.' identifier '(' (expression)? (',' (expression)?)* ')' ;
-buildit_words : BUILDIT ;
+buildit : buildit_words '(' (expression)? (',' (expression)?)* ')' ;
+buildit_words : programb
+              | stack
+              | arrayb
+              | txtwindow;
+
+programb : 'Program' '.' PROGRAM ;
+stack : 'Stack' '.' STACK ;
+arrayb : 'Array' '.' ARRAY ;
+txtwindow : 'TextWindow' '.' TXTWINDOW ;
 
 expression : expressionbool ;
 expressionbool : expressionrel (OPLOG expressionbool)* ;
 expressionrel : e (OPREL e)? ;
-e : t (('+' | '-') t)* ; // No funciona con la regla lexica. Ni puta idea de por qué
+e : t (('+' | '-') t)* ; // No funciona con el token. Ni puta idea de por qué.
 t : literal (OPMULT literal)* ;
 
 // REGLAS LEXICAS Y TOKENS
-BUILDIT : 'Program' | 'Stack' | 'Array' | 'TextWindow' ;
 OPLOG : 'And' | 'Or' ;
 OPREL : '>' | '<' | '<=' | '>=' | '=' | '<>' ;
 OPSUM : '+' | '-' ;
 OPMULT : '*' | '/' ;
+
+// POSIBILIDADES BUILT-IN
+PROGRAM : 'delay' | 'End' ;
+STACK : 'PushValue' | 'PopValue' | 'GetCount' ;
+ARRAY : 'ContainsIndex' | 'ContainsValue' | 'GetAllIndices' | 'GetItemCount' | 'IsArray' | 'RemoveValue' ;
+TXTWINDOW : 'WriteLine' | 'Write' | 'Read';
 
 ID : [a-zA-Z\u00C0-\u017F][a-zA-Z0-9_\u00C0-\u017F]* ;
 TRUE : '"'T R U E'"';
