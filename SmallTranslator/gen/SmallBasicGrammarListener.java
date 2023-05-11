@@ -27,16 +27,6 @@ public interface SmallBasicGrammarListener extends ParseTreeListener {
 	 */
 	void exitSub(SmallBasicGrammarParser.SubContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#subbody}.
-	 * @param ctx the parse tree
-	 */
-	void enterSubbody(SmallBasicGrammarParser.SubbodyContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#subbody}.
-	 * @param ctx the parse tree
-	 */
-	void exitSubbody(SmallBasicGrammarParser.SubbodyContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#statement}.
 	 * @param ctx the parse tree
 	 */
@@ -206,34 +196,4 @@ public interface SmallBasicGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitT(SmallBasicGrammarParser.TContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#oprel}.
-	 * @param ctx the parse tree
-	 */
-	void enterOprel(SmallBasicGrammarParser.OprelContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#oprel}.
-	 * @param ctx the parse tree
-	 */
-	void exitOprel(SmallBasicGrammarParser.OprelContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#opsuma}.
-	 * @param ctx the parse tree
-	 */
-	void enterOpsuma(SmallBasicGrammarParser.OpsumaContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#opsuma}.
-	 * @param ctx the parse tree
-	 */
-	void exitOpsuma(SmallBasicGrammarParser.OpsumaContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#opmult}.
-	 * @param ctx the parse tree
-	 */
-	void enterOpmult(SmallBasicGrammarParser.OpmultContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#opmult}.
-	 * @param ctx the parse tree
-	 */
-	void exitOpmult(SmallBasicGrammarParser.OpmultContext ctx);
 }

@@ -22,12 +22,6 @@ public interface SmallBasicGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSub(SmallBasicGrammarParser.SubContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#subbody}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSubbody(SmallBasicGrammarParser.SubbodyContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#statement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -129,22 +123,4 @@ public interface SmallBasicGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitT(SmallBasicGrammarParser.TContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#oprel}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitOprel(SmallBasicGrammarParser.OprelContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#opsuma}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitOpsuma(SmallBasicGrammarParser.OpsumaContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#opmult}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitOpmult(SmallBasicGrammarParser.OpmultContext ctx);
 }

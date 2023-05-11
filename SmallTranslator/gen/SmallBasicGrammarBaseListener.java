@@ -40,18 +40,6 @@ public class SmallBasicGrammarBaseListener implements SmallBasicGrammarListener 
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSubbody(SmallBasicGrammarParser.SubbodyContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSubbody(SmallBasicGrammarParser.SubbodyContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterStatement(SmallBasicGrammarParser.StatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -251,42 +239,6 @@ public class SmallBasicGrammarBaseListener implements SmallBasicGrammarListener 
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitT(SmallBasicGrammarParser.TContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterOprel(SmallBasicGrammarParser.OprelContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitOprel(SmallBasicGrammarParser.OprelContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterOpsuma(SmallBasicGrammarParser.OpsumaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitOpsuma(SmallBasicGrammarParser.OpsumaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterOpmult(SmallBasicGrammarParser.OpmultContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitOpmult(SmallBasicGrammarParser.OpmultContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
