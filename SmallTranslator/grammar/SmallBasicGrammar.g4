@@ -69,9 +69,6 @@ A : ('A' | 'a') ;
 L : ('L' | 'l') ;
 S : ('S' | 's') ;
 
-
-
-
 COMMENTS: '\'' .*? '\n' -> skip ;
 WS : [ \t\r\n]+ -> skip ;
 
