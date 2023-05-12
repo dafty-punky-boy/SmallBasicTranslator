@@ -5,34 +5,18 @@ import java.util.LinkedList;
 
 public class SmallIdentifier extends SmallBasicGrammarBaseListener {
     SmallBasicGrammarParser parser;
-    TranslateInfo infoT;
+    boolean func;
     int ident;
 
-    public SmallIdentifier(SmallBasicGrammarParser parser, TranslateInfo infoT) {
+    public SmallIdentifier(SmallBasicGrammarParser parser) {
         this.parser = parser;
-        this.infoT = infoT;
+        this.func = false;
         this.ident = 0;
     }
 
     @Override
     public void enterIdentifiersentences(SmallBasicGrammarParser.IdentifiersentencesContext ctx) {
-        if(infoT.symbolTab.containsKey(ctx.identifier().ID().getText()) ||
-            ctx.characteristic().expression() == null) return;
 
-        String id = ctx.identifier().ID().getText();
-
-        if(ctx.identifier().array() != null) {
-            LinkedList<String> mapTypes = new LinkedList<String>();
-            for(SmallBasicGrammarParser.ExpressionContext context : ctx.identifier().array().expression()) {
-                mapTypes.add(identifyType(context));
-            }
-
-            infoT.symbolTab.put(id, "map");
-            infoT.mapTypes.put(id, mapTypes);
-        }
-        else {
-            infoT.symbolTab.put(id, identifyType(ctx.characteristic().expression()));
-        }
     }
 
 
