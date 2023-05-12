@@ -94,6 +94,30 @@ public interface SmallBasicGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitBuildit_words(SmallBasicGrammarParser.Buildit_wordsContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#programb}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitProgramb(SmallBasicGrammarParser.ProgrambContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#stack}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStack(SmallBasicGrammarParser.StackContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#arrayb}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArrayb(SmallBasicGrammarParser.ArraybContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#txtwindow}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTxtwindow(SmallBasicGrammarParser.TxtwindowContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
