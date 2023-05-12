@@ -147,6 +147,46 @@ public interface SmallBasicGrammarListener extends ParseTreeListener {
 	 */
 	void exitBuildit_words(SmallBasicGrammarParser.Buildit_wordsContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#programb}.
+	 * @param ctx the parse tree
+	 */
+	void enterProgramb(SmallBasicGrammarParser.ProgrambContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#programb}.
+	 * @param ctx the parse tree
+	 */
+	void exitProgramb(SmallBasicGrammarParser.ProgrambContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#stack}.
+	 * @param ctx the parse tree
+	 */
+	void enterStack(SmallBasicGrammarParser.StackContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#stack}.
+	 * @param ctx the parse tree
+	 */
+	void exitStack(SmallBasicGrammarParser.StackContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#arrayb}.
+	 * @param ctx the parse tree
+	 */
+	void enterArrayb(SmallBasicGrammarParser.ArraybContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#arrayb}.
+	 * @param ctx the parse tree
+	 */
+	void exitArrayb(SmallBasicGrammarParser.ArraybContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#txtwindow}.
+	 * @param ctx the parse tree
+	 */
+	void enterTxtwindow(SmallBasicGrammarParser.TxtwindowContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#txtwindow}.
+	 * @param ctx the parse tree
+	 */
+	void exitTxtwindow(SmallBasicGrammarParser.TxtwindowContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#expression}.
 	 * @param ctx the parse tree
 	 */
