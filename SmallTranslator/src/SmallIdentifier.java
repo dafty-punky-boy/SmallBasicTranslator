@@ -5,13 +5,18 @@ import java.util.LinkedList;
 
 public class SmallIdentifier extends SmallBasicGrammarBaseListener {
     SmallBasicGrammarParser parser;
+    String outFuncTrans;
+    String funcTrans;
     boolean func;
     int ident;
 
     public SmallIdentifier(SmallBasicGrammarParser parser) {
         this.parser = parser;
-        this.func = false;
-        this.ident = 0;
+        func = false;
+        ident = 0;
+
+        outFuncTrans = "";
+        funcTrans = "";
     }
 
     @Override
