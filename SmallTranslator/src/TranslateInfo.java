@@ -8,7 +8,7 @@ public class TranslateInfo {
     }
 
     public void printTranslation() {
-        System.out.print(functions);
+        System.out.println(functions);
         System.out.print(mainFlow);
     }
 }

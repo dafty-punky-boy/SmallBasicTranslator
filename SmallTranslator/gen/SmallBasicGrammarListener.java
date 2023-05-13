@@ -97,6 +97,26 @@ public interface SmallBasicGrammarListener extends ParseTreeListener {
 	 */
 	void exitIf_statement(SmallBasicGrammarParser.If_statementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#elseif}.
+	 * @param ctx the parse tree
+	 */
+	void enterElseif(SmallBasicGrammarParser.ElseifContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#elseif}.
+	 * @param ctx the parse tree
+	 */
+	void exitElseif(SmallBasicGrammarParser.ElseifContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#else}.
+	 * @param ctx the parse tree
+	 */
+	void enterElse(SmallBasicGrammarParser.ElseContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#else}.
+	 * @param ctx the parse tree
+	 */
+	void exitElse(SmallBasicGrammarParser.ElseContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#for_loop}.
 	 * @param ctx the parse tree
 	 */
@@ -147,6 +167,46 @@ public interface SmallBasicGrammarListener extends ParseTreeListener {
 	 */
 	void exitBuildit_words(SmallBasicGrammarParser.Buildit_wordsContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#programb}.
+	 * @param ctx the parse tree
+	 */
+	void enterProgramb(SmallBasicGrammarParser.ProgrambContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#programb}.
+	 * @param ctx the parse tree
+	 */
+	void exitProgramb(SmallBasicGrammarParser.ProgrambContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#stack}.
+	 * @param ctx the parse tree
+	 */
+	void enterStack(SmallBasicGrammarParser.StackContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#stack}.
+	 * @param ctx the parse tree
+	 */
+	void exitStack(SmallBasicGrammarParser.StackContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#arrayb}.
+	 * @param ctx the parse tree
+	 */
+	void enterArrayb(SmallBasicGrammarParser.ArraybContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#arrayb}.
+	 * @param ctx the parse tree
+	 */
+	void exitArrayb(SmallBasicGrammarParser.ArraybContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#txtwindow}.
+	 * @param ctx the parse tree
+	 */
+	void enterTxtwindow(SmallBasicGrammarParser.TxtwindowContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#txtwindow}.
+	 * @param ctx the parse tree
+	 */
+	void exitTxtwindow(SmallBasicGrammarParser.TxtwindowContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#expression}.
 	 * @param ctx the parse tree
 	 */
@@ -196,4 +256,54 @@ public interface SmallBasicGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitT(SmallBasicGrammarParser.TContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#oplog}.
+	 * @param ctx the parse tree
+	 */
+	void enterOplog(SmallBasicGrammarParser.OplogContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#oplog}.
+	 * @param ctx the parse tree
+	 */
+	void exitOplog(SmallBasicGrammarParser.OplogContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#oprel}.
+	 * @param ctx the parse tree
+	 */
+	void enterOprel(SmallBasicGrammarParser.OprelContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#oprel}.
+	 * @param ctx the parse tree
+	 */
+	void exitOprel(SmallBasicGrammarParser.OprelContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#opsum}.
+	 * @param ctx the parse tree
+	 */
+	void enterOpsum(SmallBasicGrammarParser.OpsumContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#opsum}.
+	 * @param ctx the parse tree
+	 */
+	void exitOpsum(SmallBasicGrammarParser.OpsumContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#opmult}.
+	 * @param ctx the parse tree
+	 */
+	void enterOpmult(SmallBasicGrammarParser.OpmultContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#opmult}.
+	 * @param ctx the parse tree
+	 */
+	void exitOpmult(SmallBasicGrammarParser.OpmultContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#minus}.
+	 * @param ctx the parse tree
+	 */
+	void enterMinus(SmallBasicGrammarParser.MinusContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#minus}.
+	 * @param ctx the parse tree
+	 */
+	void exitMinus(SmallBasicGrammarParser.MinusContext ctx);
 }

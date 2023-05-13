@@ -64,6 +64,18 @@ public interface SmallBasicGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitIf_statement(SmallBasicGrammarParser.If_statementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#elseif}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitElseif(SmallBasicGrammarParser.ElseifContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#else}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitElse(SmallBasicGrammarParser.ElseContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#for_loop}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -94,6 +106,30 @@ public interface SmallBasicGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitBuildit_words(SmallBasicGrammarParser.Buildit_wordsContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#programb}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitProgramb(SmallBasicGrammarParser.ProgrambContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#stack}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStack(SmallBasicGrammarParser.StackContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#arrayb}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArrayb(SmallBasicGrammarParser.ArraybContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#txtwindow}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTxtwindow(SmallBasicGrammarParser.TxtwindowContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -123,4 +159,34 @@ public interface SmallBasicGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitT(SmallBasicGrammarParser.TContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#oplog}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOplog(SmallBasicGrammarParser.OplogContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#oprel}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOprel(SmallBasicGrammarParser.OprelContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#opsum}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOpsum(SmallBasicGrammarParser.OpsumContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#opmult}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOpmult(SmallBasicGrammarParser.OpmultContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#minus}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMinus(SmallBasicGrammarParser.MinusContext ctx);
 }

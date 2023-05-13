@@ -13,10 +13,12 @@ array : ('[' expression ']')+ ;
 
 characteristic : ':' | '(' ')' | '=' expression ;
 
-literal : ('-')? TKN_NUMBER | TKN_TEXT | ('-')? identifier | TRUE | FALSE | ('-')? buildit | ('-')? '(' expression ')' ;
+literal : minus? TKN_NUMBER | TKN_TEXT | minus? identifier | TRUE | FALSE | minus? buildit | minus? '(' expression ')' ;
 
-if_statement : 'If' '(' expression ')' 'Then' statement*
-                ('ElseIf' '(' expression ')' 'Then' statement*)* ('Else' statement*)? 'EndIf' ;
+if_statement : 'If' '(' expression ')' 'Then' statement* elseif* else? 'EndIf' ;
+
+elseif : 'ElseIf' '(' expression ')' 'Then' statement* ;
+else : 'Else' statement* ;
 
 for_loop : 'For' identifiersentences 'To' expression ('Step'  e)? statement* 'EndFor' ;
 
@@ -45,6 +47,7 @@ oplog : 'And' | 'Or' ;
 oprel : '>' | '<' | '<=' | '>=' | '=' | '<>' ;
 opsum : '+' | '-' ;
 opmult : '*' | '/' ;
+minus : '-';
 
 
 // POSIBILIDADES BUILT-IN
