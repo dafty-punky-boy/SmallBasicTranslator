@@ -36,16 +36,16 @@ arrayb : 'Array' '.' ARRAY ;
 txtwindow : 'TextWindow' '.' TXTWINDOW ;
 
 expression : expressionbool ;
-expressionbool : expressionrel (OPLOG expressionbool)* ;
-expressionrel : e (OPREL e)? ;
-e : t (('+' | '-') t)* ; // No funciona con el token. Ni puta idea de por qué.
-t : literal (OPMULT literal)* ;
+expressionbool : expressionrel (oplog expressionbool)* ;
+expressionrel : e (oprel e)? ;
+e : t (opsum t)* ; // No funciona con el token.
+t : literal (opmult literal)* ;
 
-// REGLAS LEXICAS Y TOKENS
-OPLOG : 'And' | 'Or' ;
-OPREL : '>' | '<' | '<=' | '>=' | '=' | '<>' ;
-OPSUM : '+' | '-' ;
-OPMULT : '*' | '/' ;
+oplog : 'And' | 'Or' ;
+oprel : '>' | '<' | '<=' | '>=' | '=' | '<>' ;
+opsum : '+' | '-' ;
+opmult : '*' | '/' ;
+
 
 // POSIBILIDADES BUILT-IN
 PROGRAM : 'delay' | 'End' ;
@@ -59,18 +59,15 @@ FALSE : '"'F A L S E'"' ;
 TKN_TEXT : '"' ( '\\' . | ~('\\'|'"') )* '"';
 TKN_NUMBER : [0-9]+('.'[0-9]*)? ;
 
-T : ('T' | 't') ;
-R : ('R' | 'r');
-U : ('U' | 'u') ;
-E : ('E' | 'e') ;
+fragment T : ('T' | 't') ;
+fragment R : ('R' | 'r');
+fragment U : ('U' | 'u') ;
+fragment E : ('E' | 'e') ;
 
-F : ('F' | 'f') ;
-A : ('A' | 'a') ;
-L : ('L' | 'l') ;
-S : ('S' | 's') ;
-
-
-
+fragment F : ('F' | 'f') ;
+fragment A : ('A' | 'a') ;
+fragment L : ('L' | 'l') ;
+fragment S : ('S' | 's') ;
 
 COMMENTS: '\'' .*? '\n' -> skip ;
 WS : [ \t\r\n]+ -> skip ;
