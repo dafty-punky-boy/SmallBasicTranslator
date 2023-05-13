@@ -1,4 +1,4 @@
-// Generated from C:/Users/dq1005la/IdeaProjects/SmallBasicTranslator/SmallTranslator/grammar\SmallBasicGrammar.g4 by ANTLR 4.12.0
+// Generated from C:/Users/sebas/OneDrive/Escritorio/Traductor/SmallBasicTranslator/SmallTranslator/grammar\SmallBasicGrammar.g4 by ANTLR 4.12.0
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
