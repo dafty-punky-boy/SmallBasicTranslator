@@ -1,10 +1,2 @@
-x = TextWindow.Read()
-y = TextWindow.Read()
-
-If (x > y) Then
-  max = x
-Else
-  max = y
-EndIf
-
-TextWindow.WriteLine(max)
+x = 3 + 2 + 5
+y = "True"
