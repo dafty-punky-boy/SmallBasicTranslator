@@ -1,3 +1,8 @@
+If(x > y) Then
 For i = 10 To 1 Step -1
 TextWindow.WriteLine(i)
+x = 3
 EndFor
+Else
+a = b + 3
+EndIf

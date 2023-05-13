@@ -9,11 +9,11 @@ public class SmallTranslate {
     public static void main(String[] args) throws Exception {
 // create a CharStream that reads from standard input / file
 // create a lexer that feeds off of input CharStrea
-        class MyVisitor<T> extends SmallBasicGrammarBaseVisitor<T> {
+        class MyVisitor extends SmallBasicGrammarBaseVisitor <String> {
 
 
             @Override
-            public T visitIf_statement (SmallBasicGrammarParser.If_statementContext ctx){
+            public String visitIf_statement (SmallBasicGrammarParser.If_statementContext ctx){
                 ident += 1;
                 outFuncTrans += "if ";
                 outFuncTrans += ctx.expression(0).getText();
@@ -22,11 +22,11 @@ public class SmallTranslate {
                 int stats = 0;
                 for (int i =5; i < numchild; i++) {
                     ParseTree child = ctx.getChild(i);
-                    if (child == ctx.TKN_ElseIf()){
+                    if (child.getText().equals("ElseIf")){
                         outFuncTrans += "elif ";
                         outFuncTrans += ctx.expression(1).getText();
                         outFuncTrans += ":" + "\n";
-                        i +=3;
+                        i +=4;
                     }
                     else if (child == ctx.TKN_Else()) {
                         outFuncTrans += "else:" + "\n";
@@ -38,11 +38,11 @@ public class SmallTranslate {
                 }
 
                 ident -= 1;
-                return visitChildren(ctx);
+                return outFuncTrans;
             }
 
             @Override
-            public T visitFor_loop (SmallBasicGrammarParser.For_loopContext ctx){
+            public String visitFor_loop (SmallBasicGrammarParser.For_loopContext ctx){
                 ident += 1;
                 outFuncTrans += "for ";
                 String id = ctx.identifiersentences().identifier().getText();
@@ -66,7 +66,7 @@ public class SmallTranslate {
 
 
             @Override
-            public T visitWhile_loop (SmallBasicGrammarParser.While_loopContext ctx){
+            public String visitWhile_loop (SmallBasicGrammarParser.While_loopContext ctx){
                 ident += 1;
                 outFuncTrans += "while ";
                 String expr = ctx.expression().getText();
@@ -76,24 +76,24 @@ public class SmallTranslate {
                     visit(statement);
                 }
                 ident -= 1;
-                return visitChildren(ctx);
+                return outFuncTrans;
             }
 
             @Override
-            public T visitStatement (SmallBasicGrammarParser.StatementContext ctx){
+            public String visitStatement (SmallBasicGrammarParser.StatementContext ctx){
                 for (int i = 0; i < ident; i++) {
                     outFuncTrans += "\t";
                 }
                 //outFuncTrans += ctx.getText() + "\n";
                 return visitChildren(ctx);
             }
-            @Override public T visitIdentifiersentences(SmallBasicGrammarParser.IdentifiersentencesContext ctx) {
+            @Override public String visitIdentifiersentences(SmallBasicGrammarParser.IdentifiersentencesContext ctx) {
                 outFuncTrans += ctx.getText() + "\n";
                 return visitChildren(ctx);
             }
-            @Override public T visitBuildit(SmallBasicGrammarParser.BuilditContext ctx) {
+            @Override public String visitBuildit(SmallBasicGrammarParser.BuilditContext ctx) {
                 outFuncTrans += ctx.getText() + "\n";
-                return visitChildren(ctx);
+                return outFuncTrans;
             }
         }
     SmallBasicGrammarLexer lexer;
