@@ -1,10 +1,5 @@
-x = TextWindow.Read()
-y = TextWindow.Read()
-
-If (x > y) Then
-  max = x
+If (remainder = 0) Then
+TextWindow.WriteLine("The number is Even")
 Else
-  max = y
+TextWindow.WriteLine("The number is Odd")
 EndIf
-
-TextWindow.WriteLine(max)

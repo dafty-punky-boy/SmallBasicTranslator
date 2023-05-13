@@ -1,4 +1,4 @@
-// Generated from D:/USER/Desktop/Documentos u/Septimo Semestre/Lenguajes/translator/SmallTranslator/grammar\SmallBasicGrammar.g4 by ANTLR 4.12.0
+// Generated from C:/Users/dq1005la/IdeaProjects/SmallBasicTranslator/SmallTranslator/grammar\SmallBasicGrammar.g4 by ANTLR 4.12.0
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -123,4 +123,10 @@ public interface SmallBasicGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitT(SmallBasicGrammarParser.TContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SmallBasicGrammarParser#oprel}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOprel(SmallBasicGrammarParser.OprelContext ctx);
 }

@@ -1,4 +1,4 @@
-// Generated from D:/USER/Desktop/Documentos u/Septimo Semestre/Lenguajes/translator/SmallTranslator/grammar\SmallBasicGrammar.g4 by ANTLR 4.12.0
+// Generated from C:/Users/dq1005la/IdeaProjects/SmallBasicTranslator/SmallTranslator/grammar\SmallBasicGrammar.g4 by ANTLR 4.12.0
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -196,4 +196,14 @@ public interface SmallBasicGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitT(SmallBasicGrammarParser.TContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SmallBasicGrammarParser#oprel}.
+	 * @param ctx the parse tree
+	 */
+	void enterOprel(SmallBasicGrammarParser.OprelContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SmallBasicGrammarParser#oprel}.
+	 * @param ctx the parse tree
+	 */
+	void exitOprel(SmallBasicGrammarParser.OprelContext ctx);
 }

@@ -16,7 +16,7 @@ characteristic : ':' | '(' ')' | '=' expression ;
 literal : ('-')? TKN_NUMBER | TKN_TEXT | ('-')? identifier | TRUE | FALSE | ('-')? buildit | ('-')? '(' expression ')' ;
 
 if_statement : 'If' '(' expression ')' 'Then' statement*
-                ('ElseIf' '(' expression ')' 'Then' statement*)* ('Else' statement*)? 'EndIf' ;
+                ( TKN_ElseIf '(' expression ')' 'Then' statement*)* ( TKN_Else statement*)? 'EndIf' ;
 
 for_loop : 'For' identifiersentences 'To' expression ('Step'  e)? statement* 'EndFor' ;
 
@@ -29,17 +29,23 @@ buildit_words : BUILDIT ;
 
 expression : expressionbool ;
 expressionbool : expressionrel (OPLOG expressionbool)* ;
-expressionrel : e (OPREL e)? ;
+expressionrel : e (oprel e)? ;
 e : t (('+' | '-') t)* ; // No funciona con la regla lexica. Ni puta idea de por qué
 t : literal (OPMULT literal)* ;
-
+oprel: TKN_LESS | TKN_GRE | TKN_EQGRE | TKN_EQLESS | TKN_EQ | TKN_DIFF ;
 // REGLAS LEXICAS Y TOKENS
 BUILDIT : 'Program' | 'Stack' | 'Array' | 'TextWindow' ;
 OPLOG : 'And' | 'Or' ;
-OPREL : '>' | '<' | '<=' | '>=' | '=' | '<>' ;
+TKN_LESS : '>' ;
+TKN_GRE: '<';
+TKN_EQGRE: '<=';
+TKN_EQLESS: '>=';
+TKN_EQ: '=';
+TKN_DIFF: '<>';
 OPSUM : '+' | '-' ;
 OPMULT : '*' | '/' ;
-
+TKN_Else: 'Else';
+TKN_ElseIf: 'ElseIf';
 ID : [a-zA-Z\u00C0-\u017F][a-zA-Z0-9_\u00C0-\u017F]* ;
 TRUE : '"'T R U E'"';
 FALSE : '"'F A L S E'"' ;
