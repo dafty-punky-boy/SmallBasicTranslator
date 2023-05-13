@@ -1,5 +1,3 @@
-If (remainder = 0) Then
-TextWindow.WriteLine("The number is Even")
-Else
-TextWindow.WriteLine("The number is Odd")
-EndIf
+For i = 10 To 1 Step -1
+TextWindow.WriteLine(i)
+EndFor

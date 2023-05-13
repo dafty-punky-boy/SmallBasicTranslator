@@ -18,17 +18,26 @@ public class SmallTranslate {
                 outFuncTrans += "if ";
                 outFuncTrans += ctx.expression(0).getText();
                 outFuncTrans += ":" + "\n";
-                if (ctx.TKN_Else() != null) {
-                    outFuncTrans += "else:" + "\n";
+                int numchild = ctx.getChildCount() - 1;
+                int stats = 0;
+                for (int i =5; i < numchild; i++) {
+                    ParseTree child = ctx.getChild(i);
+                    if (child == ctx.TKN_ElseIf()){
+                        outFuncTrans += "elif ";
+                        outFuncTrans += ctx.expression(1).getText();
+                        outFuncTrans += ":" + "\n";
+                        i +=3;
+                    }
+                    else if (child == ctx.TKN_Else()) {
+                        outFuncTrans += "else:" + "\n";
+                    }
+                    else {
+                        visitStatement(ctx.statement(stats));
+                        stats +=1;
+                    }
                 }
-                //String statement = ctx.statement(0).getText();
-                //System.out.print(statement + "\n");
-                //System.out.print(ctx.TKN_Else().getText());
-                //if(ctx.statement(1) != null) {
-                //System.out.print("else:" + "\n");
-                //String statement1 = ctx.statement(1).getText();
-                //System.out.print(statement1 + "\n");
 
+                ident -= 1;
                 return visitChildren(ctx);
             }
 
@@ -49,6 +58,9 @@ public class SmallTranslate {
                 }
                 outFuncTrans += ")";
                 outFuncTrans += ":" + "\n";
+                for (SmallBasicGrammarParser.StatementContext statement : ctx.statement()) {
+                    visit(statement);
+                }
                 return visitChildren(ctx);
             }
 
@@ -60,6 +72,10 @@ public class SmallTranslate {
                 String expr = ctx.expression().getText();
                 outFuncTrans += expr;
                 outFuncTrans += ":" + "\n";
+                for (SmallBasicGrammarParser.StatementContext statement : ctx.statement()) {
+                    visit(statement);
+                }
+                ident -= 1;
                 return visitChildren(ctx);
             }
 
@@ -68,7 +84,14 @@ public class SmallTranslate {
                 for (int i = 0; i < ident; i++) {
                     outFuncTrans += "\t";
                 }
-
+                //outFuncTrans += ctx.getText() + "\n";
+                return visitChildren(ctx);
+            }
+            @Override public T visitIdentifiersentences(SmallBasicGrammarParser.IdentifiersentencesContext ctx) {
+                outFuncTrans += ctx.getText() + "\n";
+                return visitChildren(ctx);
+            }
+            @Override public T visitBuildit(SmallBasicGrammarParser.BuilditContext ctx) {
                 outFuncTrans += ctx.getText() + "\n";
                 return visitChildren(ctx);
             }
