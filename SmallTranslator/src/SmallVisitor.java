@@ -34,6 +34,7 @@ SmallBasicGrammarVisitor<Integer> {
                 if (ctx.characteristic().expression()!=null){
                     translateData.functions += "global " + ctx.identifier().ID().getText() + "\n";
                     translateData.functions += addIndent();
+
                 }
 
             }
@@ -43,7 +44,7 @@ SmallBasicGrammarVisitor<Integer> {
 
                 visitIdentifier(ctx.identifier());
                 visitCharacteristic(ctx.characteristic());
-                translateData.mainFlow += "\n";
+                translateData.functions += "\n";
 
             }
 
@@ -122,11 +123,31 @@ SmallBasicGrammarVisitor<Integer> {
 
     @Override
     public Integer visitOprel(SmallBasicGrammarParser.OprelContext ctx) {
+        System.out.println(ctx.getText());
         if(inFunc) {
-            translateData.functions += " " + ctx.getText() + " ";
+            if (ctx.getText().equals("=")){
+
+                translateData.functions += " " + "==" + " ";
+
+            }
+            else
+                if (ctx.getText().equals("<>")){
+                    translateData.functions += " " + "!=" + " ";
+                }
+                else translateData.functions += " " + ctx.getText() + " ";
+
         }
         else {
-            translateData.mainFlow += " " + ctx.getText() + " ";
+            if (ctx.getText().equals("=")){
+
+                translateData.functions += " " + "==" + " ";
+
+            }
+            else
+            if (ctx.getText().equals("<>")){
+                translateData.functions += " " + "!=" + " ";
+            }
+            else translateData.functions += " " + ctx.getText() + " ";
         }
 
         return 1;
@@ -484,4 +505,6 @@ SmallBasicGrammarVisitor<Integer> {
 
         return 1;
     }
+
 }
+

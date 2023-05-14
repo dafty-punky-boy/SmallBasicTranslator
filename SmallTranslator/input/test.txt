@@ -8,7 +8,8 @@ TextWindow.WriteLine(e)
 
 Sub mul
   sum()
-  e = c * d
+  e = c <> d
+  e = c = b
 EndSub
 
 Sub sum
