@@ -32,20 +32,34 @@ SmallBasicGrammarVisitor<Integer> {
             translateData.functions += addIndent();
 
             if(ctx.identifier().array() == null) {
-                translateData.functions += "global " + ctx.identifier().ID().getText() + "\n";
-                translateData.functions += addIndent();
+                if (ctx.characteristic().expression()!=null){
+                    translateData.functions += "global " + ctx.identifier().ID().getText() + "\n";
+                    translateData.functions += addIndent();
+                }
+
             }
 
-            visitIdentifier(ctx.identifier());
-            visitCharacteristic(ctx.characteristic());
-            translateData.functions += "\n";
+
+            if (ctx.characteristic().getText().charAt(0) != ':'){
+
+                visitIdentifier(ctx.identifier());
+                visitCharacteristic(ctx.characteristic());
+                translateData.mainFlow += "\n";
+
+            }
+
         }
         else {
             translateData.mainFlow += addIndent();
 
-            visitIdentifier(ctx.identifier());
-            visitCharacteristic(ctx.characteristic());
-            translateData.mainFlow += "\n";
+            if (ctx.characteristic().getText().charAt(0) != ':'){
+
+                visitIdentifier(ctx.identifier());
+                visitCharacteristic(ctx.characteristic());
+                translateData.mainFlow += "\n";
+
+            }
+
         }
 
         dec = false;
@@ -79,7 +93,7 @@ SmallBasicGrammarVisitor<Integer> {
                 visitExpression(ctx.expression());
             }
             else {
-                translateData.functions += ctx.getText();
+                translateData.functions += ctx.getText() + "\n";
             }
         }
         else {
@@ -88,7 +102,7 @@ SmallBasicGrammarVisitor<Integer> {
                 visitExpression(ctx.expression());
             }
             else {
-                translateData.mainFlow += ctx.getText();
+                translateData.mainFlow += ctx.getText() + "\n";
             }
         }
 
