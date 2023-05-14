@@ -325,7 +325,7 @@ SmallBasicGrammarVisitor<Integer> {
                 translateData.functions += ", ";
                 visitE(ctx.e());
             }
-            translateData.functions += ":\n";
+            translateData.functions += "):\n";
             ++ident;
             int i = 0;
 
@@ -368,33 +368,13 @@ SmallBasicGrammarVisitor<Integer> {
             translateData.functions += "\n" + addIndent() + "if ";
             visitExpression(ctx.expression());
             translateData.functions += ":\n";
-            ++ident;
-            int i = 0;
 
-            while(ctx.statement(i) != null) {
-                visitChildren(ctx.statement(i));
-                ++i;
-            }
-
-            --ident;
-
-            if(ctx.elseif() != null) {
-                i = 0;
-
-                while(ctx.elseif(i) != null) {
-                    visitChildren(ctx.elseif(i));
-                    ++i;
-                }
-            }
-
-            if(ctx.else_() != null) visitElse(ctx.else_());
-
-            translateData.functions += "\n";
         }
         else {
             translateData.mainFlow += "\n" + addIndent() + "if ";
             visitExpression(ctx.expression());
             translateData.mainFlow += ":\n";
+        }
             ++ident;
             int i = 0;
 
@@ -414,7 +394,10 @@ SmallBasicGrammarVisitor<Integer> {
             }
 
             if(ctx.else_() != null) visitElse(ctx.else_());
-
+        if(inFunc) {
+            translateData.functions += "\n";
+        }
+        else {
             translateData.mainFlow += "\n";
         }
 
