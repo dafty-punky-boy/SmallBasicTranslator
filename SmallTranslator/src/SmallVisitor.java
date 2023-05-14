@@ -141,14 +141,14 @@ SmallBasicGrammarVisitor<Integer> {
         else {
             if (ctx.getText().equals("=")){
 
-                translateData.functions += " " + "==" + " ";
+                translateData.mainFlow += " " + "==" + " ";
 
             }
             else
             if (ctx.getText().equals("<>")){
-                translateData.functions += " " + "!=" + " ";
+                translateData.mainFlow += " " + "!=" + " ";
             }
-            else translateData.functions += " " + ctx.getText() + " ";
+            else translateData.mainFlow += " " + ctx.getText() + " ";
         }
 
         return 1;
