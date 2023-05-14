@@ -1,4 +1,3 @@
-import org.antlr.runtime.tree.ParseTree;
 
 public class SmallVisitor extends SmallBasicGrammarBaseVisitor<Integer> implements
 SmallBasicGrammarVisitor<Integer> {
@@ -226,10 +225,10 @@ SmallBasicGrammarVisitor<Integer> {
                     translateData.functions += "input()";
                 }
                 else {
-                    translateData.functions += "print(str(";
+                    translateData.functions += "print(";
                     visitExpression(ctx.expression(0));
                     if(ctx.buildit_words().txtwindow().TXTWINDOW().getText().equals("WriteLine")) {
-                        translateData.functions += "))";
+                        translateData.functions += ")";
                     }
                     else {
                         translateData.functions+= "), end=\"\")";
@@ -247,10 +246,10 @@ SmallBasicGrammarVisitor<Integer> {
                     translateData.mainFlow += "input()";
                 }
                 else {
-                    translateData.mainFlow += "print(str(";
+                    translateData.mainFlow += "print(";
                     visitExpression(ctx.expression(0));
                     if(ctx.buildit_words().txtwindow().TXTWINDOW().getText().equals("WriteLine")) {
-                        translateData.mainFlow += "))";
+                        translateData.mainFlow += ")";
                     }
                     else {
                         translateData.mainFlow += "), end=\"\")";
