@@ -3,8 +3,14 @@ import org.antlr.v4.runtime.CommonTokenStream;
 
 public class Main {
     public static void main(String[] args) throws Exception{
-        SmallBasicGrammarLexer lexer = new
-                SmallBasicGrammarLexer(CharStreams.fromFileName("C:\\Users\\sebas\\OneDrive\\Escritorio\\Traductor\\SmallBasicTranslator\\SmallTranslator\\input\\test.txt"));
+        SmallBasicGrammarLexer lexer;
+
+        if (args.length>0){
+            lexer = new SmallBasicGrammarLexer(CharStreams.fromFileName(args[0]));
+        } else {
+            lexer = new SmallBasicGrammarLexer(CharStreams.fromStream(System.in));
+        }
+
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         SmallBasicGrammarParser parser = new SmallBasicGrammarParser(tokens);
         SmallBasicGrammarParser.ProgramContext initContext = parser.program();
