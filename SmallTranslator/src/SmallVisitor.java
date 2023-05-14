@@ -32,12 +32,13 @@ SmallBasicGrammarVisitor<Integer> {
 
             if(ctx.identifier().array() == null) {
                 if (ctx.characteristic().expression()!=null){
-                    translateData.functions += "global " + ctx.identifier().ID().getText() + "\n";
-                    translateData.functions += addIndent();
+                    if(!translateData.id.contains(ctx.identifier().ID().getText())) {
+                        translateData.functions += "global " + ctx.identifier().ID().getText() + "\n";
+                        translateData.functions += addIndent();
+                        translateData.id.add(ctx.identifier().ID().getText());
+                    }
+                  }
                 }
-
-            }
-
 
             if (ctx.characteristic().getText().charAt(0) != ':'){
 
@@ -90,6 +91,7 @@ SmallBasicGrammarVisitor<Integer> {
             if(ctx.expression() != null) {
                 translateData.functions += " = ";
                 visitExpression(ctx.expression());
+                translateData.functions += "\n";
             }
             else {
                 translateData.functions += ctx.getText() + "\n";
