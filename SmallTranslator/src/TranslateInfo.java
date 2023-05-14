@@ -1,6 +1,10 @@
+import java.util.Arrays;
+import java.util.ArrayList;
 public class TranslateInfo {
     public String mainFlow;
     public String functions;
+
+    public ArrayList<String> id = new ArrayList<String>();
 
     public TranslateInfo() {
         mainFlow = "";
@@ -8,7 +12,7 @@ public class TranslateInfo {
     }
 
     public void printTranslation() {
-        System.out.println(functions);
+        System.out.print(functions);
         System.out.print(mainFlow);
     }
 }

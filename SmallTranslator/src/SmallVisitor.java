@@ -32,13 +32,13 @@ SmallBasicGrammarVisitor<Integer> {
 
             if(ctx.identifier().array() == null) {
                 if (ctx.characteristic().expression()!=null){
-                    translateData.functions += "global " + ctx.identifier().ID().getText() + "\n";
-                    translateData.functions += addIndent();
-
+                    if(!translateData.id.contains(ctx.identifier().ID().getText())) {
+                        translateData.functions += "global " + ctx.identifier().ID().getText() + "\n";
+                        translateData.functions += addIndent();
+                        translateData.id.add(ctx.identifier().ID().getText());
+                    }
+                  }
                 }
-
-            }
-
 
             if (ctx.characteristic().getText().charAt(0) != ':'){
 
@@ -91,6 +91,7 @@ SmallBasicGrammarVisitor<Integer> {
             if(ctx.expression() != null) {
                 translateData.functions += " = ";
                 visitExpression(ctx.expression());
+                translateData.functions += "\n";
             }
             else {
                 translateData.functions += ctx.getText() + "\n";
@@ -346,7 +347,7 @@ SmallBasicGrammarVisitor<Integer> {
                 translateData.functions += ", ";
                 visitE(ctx.e());
             }
-            translateData.functions += ":\n";
+            translateData.functions += "):\n";
             ++ident;
             int i = 0;
 
@@ -389,33 +390,13 @@ SmallBasicGrammarVisitor<Integer> {
             translateData.functions += "\n" + addIndent() + "if ";
             visitExpression(ctx.expression());
             translateData.functions += ":\n";
-            ++ident;
-            int i = 0;
 
-            while(ctx.statement(i) != null) {
-                visitChildren(ctx.statement(i));
-                ++i;
-            }
-
-            --ident;
-
-            if(ctx.elseif() != null) {
-                i = 0;
-
-                while(ctx.elseif(i) != null) {
-                    visitChildren(ctx.elseif(i));
-                    ++i;
-                }
-            }
-
-            if(ctx.else_() != null) visitElse(ctx.else_());
-
-            translateData.functions += "\n";
         }
         else {
             translateData.mainFlow += "\n" + addIndent() + "if ";
             visitExpression(ctx.expression());
             translateData.mainFlow += ":\n";
+        }
             ++ident;
             int i = 0;
 
@@ -435,7 +416,10 @@ SmallBasicGrammarVisitor<Integer> {
             }
 
             if(ctx.else_() != null) visitElse(ctx.else_());
-
+        if(inFunc) {
+            translateData.functions += "\n";
+        }
+        else {
             translateData.mainFlow += "\n";
         }
 

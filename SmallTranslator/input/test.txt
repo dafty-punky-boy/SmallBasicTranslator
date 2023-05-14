@@ -1,17 +1,28 @@
 a = 1
 b = 2
 c = 3
-
 mul()
-
 TextWindow.WriteLine(e)
 
 Sub mul
   sum()
-  e = c <> d
-  e = c = b
+  e = c * d
+  e = e + 3
+  a = 1
+  b = 2
+  c = 3
+EndSub
+Sub sum
+ For number = 1 To 10
+ TextWindow.WriteLine(number)
+ EndFor
+ a = 1
+ b = 2
+ c = 3
 EndSub
 
-Sub sum
-  d = a + b
-EndSub
+While (number > 1)
+  TextWindow.WriteLine(number)
+  number = number / 2
+EndWhile
+
