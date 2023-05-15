@@ -44,7 +44,7 @@ SmallBasicGrammarVisitor<Integer> {
 
                 visitIdentifier(ctx.identifier());
                 visitCharacteristic(ctx.characteristic());
-                translateData.mainFlow += "\n";
+                translateData.functions += "\n";
 
             }
 
@@ -124,11 +124,31 @@ SmallBasicGrammarVisitor<Integer> {
 
     @Override
     public Integer visitOprel(SmallBasicGrammarParser.OprelContext ctx) {
+        System.out.println(ctx.getText());
         if(inFunc) {
-            translateData.functions += " " + ctx.getText() + " ";
+            if (ctx.getText().equals("=")){
+
+                translateData.functions += " " + "==" + " ";
+
+            }
+            else
+                if (ctx.getText().equals("<>")){
+                    translateData.functions += " " + "!=" + " ";
+                }
+                else translateData.functions += " " + ctx.getText() + " ";
+
         }
         else {
-            translateData.mainFlow += " " + ctx.getText() + " ";
+            if (ctx.getText().equals("=")){
+
+                translateData.mainFlow += " " + "==" + " ";
+
+            }
+            else
+            if (ctx.getText().equals("<>")){
+                translateData.mainFlow += " " + "!=" + " ";
+            }
+            else translateData.mainFlow += " " + ctx.getText() + " ";
         }
 
         return 1;
@@ -229,11 +249,12 @@ SmallBasicGrammarVisitor<Integer> {
                 else {
                     translateData.functions += "print(";
                     visitExpression(ctx.expression(0));
+
                     if(ctx.buildit_words().txtwindow().TXTWINDOW().getText().equals("WriteLine")) {
                         translateData.functions += ")";
                     }
                     else {
-                        translateData.functions+= "), end=\"\")";
+                        translateData.functions+= ", end=\"\")";
                     }
                 }
             }
@@ -254,7 +275,7 @@ SmallBasicGrammarVisitor<Integer> {
                         translateData.mainFlow += ")";
                     }
                     else {
-                        translateData.mainFlow += "), end=\"\")";
+                        translateData.mainFlow += ", end=\"\")";
                     }
                 }
             }
@@ -469,4 +490,6 @@ SmallBasicGrammarVisitor<Integer> {
 
         return 1;
     }
+
 }
+

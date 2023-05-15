@@ -40,7 +40,7 @@ txtwindow : 'TextWindow' '.' TXTWINDOW ;
 expression : expressionbool ;
 expressionbool : expressionrel (oplog expressionbool)* ;
 expressionrel : e (oprel e)? ;
-e : t (opsum t)* ; // No funciona con el token.
+e : t (opsum t)* ;
 t : literal (opmult literal)* ;
 
 oplog : 'And' | 'Or' ;
