@@ -249,11 +249,12 @@ SmallBasicGrammarVisitor<Integer> {
                 else {
                     translateData.functions += "print(";
                     visitExpression(ctx.expression(0));
+
                     if(ctx.buildit_words().txtwindow().TXTWINDOW().getText().equals("WriteLine")) {
                         translateData.functions += ")";
                     }
                     else {
-                        translateData.functions+= "), end=\"\")";
+                        translateData.functions+= ", end=\"\")";
                     }
                 }
             }
@@ -274,7 +275,7 @@ SmallBasicGrammarVisitor<Integer> {
                         translateData.mainFlow += ")";
                     }
                     else {
-                        translateData.mainFlow += "), end=\"\")";
+                        translateData.mainFlow += ", end=\"\")";
                     }
                 }
             }
