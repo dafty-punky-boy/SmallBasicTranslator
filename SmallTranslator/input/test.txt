@@ -2,7 +2,7 @@ izq = 0
 der = 100
 eps = 0.00000001
 
-While (der - izq > eps)
+While (a < b And b >= c )
   med = (izq + der) / 2
 
   x = med
@@ -25,5 +25,5 @@ TextWindow.WriteLine(med)
 
 Sub fx
   y = (x*x*x*x) - 11 * (x*x) + x - 100
+  y = 3
 EndSub
-

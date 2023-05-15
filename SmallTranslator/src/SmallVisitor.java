@@ -113,10 +113,10 @@ SmallBasicGrammarVisitor<Integer> {
     @Override
     public Integer visitOplog(SmallBasicGrammarParser.OplogContext ctx) {
         if(inFunc) {
-            translateData.functions += ctx.getText();
+            translateData.functions += " " + ctx.getText() + " ";
         }
         else {
-            translateData.mainFlow += ctx.getText();
+            translateData.mainFlow += " " + ctx.getText() + " ";
         }
 
         return 1;
@@ -124,7 +124,7 @@ SmallBasicGrammarVisitor<Integer> {
 
     @Override
     public Integer visitOprel(SmallBasicGrammarParser.OprelContext ctx) {
-        System.out.println(ctx.getText());
+
         if(inFunc) {
             if (ctx.getText().equals("=")){
 
